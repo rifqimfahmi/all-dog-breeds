@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import com.rifqimfahmi.alldogbreeds.data.AppDataManager
 import com.rifqimfahmi.alldogbreeds.data.DataManager
+import com.rifqimfahmi.alldogbreeds.data.network.ApiHelper
+import com.rifqimfahmi.alldogbreeds.data.network.AppApiHelper
 import com.rifqimfahmi.alldogbreeds.data.prefs.AppPreferencesHelper
 import com.rifqimfahmi.alldogbreeds.data.prefs.PreferencesHelper
 import com.rifqimfahmi.alldogbreeds.di.ApplicationContext
@@ -44,4 +46,12 @@ class ApplicationModule (application: Application) {
     @Provides
     @Singleton
     fun providePreferencesHelper(appPreferencesHelper: AppPreferencesHelper) : PreferencesHelper = appPreferencesHelper
+
+    /*
+        provide ApiHelper need
+     */
+
+    @Provides
+    @Singleton
+    fun provideApiHelper(apiHelper: AppApiHelper) : ApiHelper = apiHelper
 }

@@ -50,18 +50,24 @@ abstract class BaseActivity : AppCompatActivity(), MvpView {
     }
 
     override fun showLoading() {
-        mCommonLoadingDialog = CommonUtils.showLoadingDialog(supportFragmentManager)
+        mCommonLoadingDialog = CommonUtils.showLoadingDialog(supportFragmentManager, null)
+    }
+
+    override fun showLoadingWithText(message: String) {
+        mCommonLoadingDialog = CommonUtils.showLoadingDialog(supportFragmentManager, message)
+    }
+
+    override fun showLoadingWithText(@StringRes message: Int) {
+        mCommonLoadingDialog = CommonUtils.showLoadingDialog(supportFragmentManager, getString(message))
     }
 
     override fun hideLoading() {
-        if (mCommonLoadingDialog?.isVisible!!) {
-            mCommonLoadingDialog?.dismiss()
-        }
+        mCommonLoadingDialog?.dismiss()
     }
 
     private fun showSnackBar(message: String) {
         val snackbar: Snackbar = Snackbar.make(
-                findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT)
+                findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG)
         val sbView: View = snackbar.view
         val textView: TextView = sbView.findViewById(android.support.design.R.id.snackbar_text)
         textView.setTextColor(ContextCompat.getColor(this, android.R.color.white))

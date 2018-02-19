@@ -3,4 +3,9 @@
     <color name="colorPrimary">#455A64</color>
     <color name="colorPrimaryDark">#263238</color>
     <color name="colorAccent">#FF6E40</color>
+
+    <color name="btn_breed">#FF8673</color>
+    <color name="btn_guess">#FFBA73</color>
+    <color name="btn_random">#62B9D1</color>
+    <color name="btn_meme">#65DF8A</color>
 </resources>

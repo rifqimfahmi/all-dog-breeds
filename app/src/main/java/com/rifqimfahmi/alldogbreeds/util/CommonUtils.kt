@@ -9,10 +9,10 @@ import com.rifqimfahmi.alldogbreeds.dialog.CommonLoadingDialog
 
 class CommonUtils {
     companion object {
-        fun showLoadingDialog(fm: FragmentManager): CommonLoadingDialog {
-            val commonDialog: CommonLoadingDialog = CommonLoadingDialog()
+        fun showLoadingDialog(fm: FragmentManager, message: String?): CommonLoadingDialog {
+            val commonDialog: CommonLoadingDialog = CommonLoadingDialog.newInstance(message)
             commonDialog.show(fm, CommonLoadingDialog.TAG)
-            return CommonLoadingDialog()
+            return commonDialog
         }
     }
 }

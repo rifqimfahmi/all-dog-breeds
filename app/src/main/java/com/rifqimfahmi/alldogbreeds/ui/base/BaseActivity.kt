@@ -22,7 +22,7 @@ import com.rifqimfahmi.alldogbreeds.util.CommonUtils
  * Created by Rifqi Mulya Fahmi on 13/02/18.
  */
 
-abstract class BaseActivity : AppCompatActivity(), MvpView {
+abstract class BaseActivity : AppCompatActivity(), MvpView, BaseFragment.Callback  {
 
     private var mCommonLoadingDialog: CommonLoadingDialog? = null
 
@@ -96,6 +96,12 @@ abstract class BaseActivity : AppCompatActivity(), MvpView {
 
     override fun showMessage(@StringRes resId: Int) {
         showMessage(getString(resId))
+    }
+
+    override fun onFragmentAttached() {
+    }
+
+    override fun onFragmentDetached(tag: String) {
     }
 
     abstract fun setup()

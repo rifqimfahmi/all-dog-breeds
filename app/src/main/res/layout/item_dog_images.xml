@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.rifqimfahmi.alldogbreeds.ui.custom.SquareImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image_photo"
+    android:scaleType="centerCrop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</com.rifqimfahmi.alldogbreeds.ui.custom.SquareImageView>

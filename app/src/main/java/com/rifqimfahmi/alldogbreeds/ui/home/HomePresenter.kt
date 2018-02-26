@@ -15,9 +15,9 @@ import javax.inject.Inject
  * Created by Rifqi Mulya Fahmi on 15/02/18.
  */
  
-class HomePresenter<V: HomeMvpView> @Inject constructor(dataManager: DataManager,
-                                                        schedulerProvider: SchedulerProvider,
-                                                        compositeDisposable: CompositeDisposable)
+    class HomePresenter<V: HomeMvpView> @Inject constructor(dataManager: DataManager,
+                                                            schedulerProvider: SchedulerProvider,
+                                                            compositeDisposable: CompositeDisposable)
     : BasePresenter<V>(dataManager, schedulerProvider, compositeDisposable), HomeMvpPresenter<V> {
 
     override fun startBreedActivity(context: Context) {

@@ -1,8 +1,10 @@
 package com.rifqimfahmi.alldogbreeds.data.network
 
+import com.rifqimfahmi.alldogbreeds.data.network.model.ResBreedImages
 import com.rifqimfahmi.alldogbreeds.data.network.model.Breeds
 import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 /*
  * Created by Rifqi Mulya Fahmi on 18/02/18.
@@ -15,4 +17,7 @@ interface DogApi {
 
     @GET("breeds/list")
     fun getBreedList(): Observable<Breeds>
+
+    @GET("breed/{type}/images")
+    fun getBreedImages(@Path("type") breedType: String): Observable<ResBreedImages>
 }

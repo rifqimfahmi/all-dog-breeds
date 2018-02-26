@@ -1,5 +1,6 @@
 package com.rifqimfahmi.alldogbreeds.data
 
+import com.rifqimfahmi.alldogbreeds.data.db.DbHelper
 import com.rifqimfahmi.alldogbreeds.data.network.ApiHelper
 import com.rifqimfahmi.alldogbreeds.data.prefs.PreferencesHelper
 
@@ -8,6 +9,6 @@ import com.rifqimfahmi.alldogbreeds.data.prefs.PreferencesHelper
  */
 
 
-interface DataManager : PreferencesHelper, ApiHelper {
+interface DataManager : PreferencesHelper, ApiHelper, DbHelper {
 
 }

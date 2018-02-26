@@ -18,6 +18,7 @@ class AppApiHelper @Inject constructor() : ApiHelper {
 
     var mDogApi: DogApi
 
+    // TODO : change use dagger instead
     init {
         val okHttpClient: OkHttpClient.Builder = OkHttpClient.Builder()
         okHttpClient.readTimeout(12, TimeUnit.SECONDS)

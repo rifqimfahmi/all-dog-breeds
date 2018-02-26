@@ -7,6 +7,15 @@ import com.rifqimfahmi.alldogbreeds.di.PerActivity
 import com.rifqimfahmi.alldogbreeds.ui.breeds.BreedMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.breeds.BreedMvpView
 import com.rifqimfahmi.alldogbreeds.ui.breeds.BreedPresenter
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedMvpView
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedPresenter
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetailMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetailMvpView
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetailPresenter
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesMvpView
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpView
 import com.rifqimfahmi.alldogbreeds.ui.home.HomePresenter
@@ -52,4 +61,16 @@ class ActivityModule constructor(appCompatActivity: AppCompatActivity) {
     @Provides
     @PerActivity
     fun provideBreedPresenter(presenter: BreedPresenter<BreedMvpView>): BreedMvpPresenter<BreedMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideDetailBreedPresenter(presenter: DetailBreedPresenter<DetailBreedMvpView>): DetailBreedMvpPresenter<DetailBreedMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideBreedImagesPresenter(presenter: BreedImagesPresenter<BreedImagesMvpView>): BreedImagesMvpPresenter<BreedImagesMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideImageDetailPresenter(presenter: ImageDetailPresenter<ImageDetailMvpView>):  ImageDetailMvpPresenter<ImageDetailMvpView> = presenter
 }

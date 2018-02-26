@@ -8,4 +8,6 @@
     <color name="btn_guess">#FFBA73</color>
     <color name="btn_random">#62B9D1</color>
     <color name="btn_meme">#65DF8A</color>
+
+    <color name="colorPrimaryDarkTransparent">#4D263238</color>
 </resources>

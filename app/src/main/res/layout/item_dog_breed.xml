@@ -13,7 +13,7 @@
         android:background="@drawable/border_item_breed"
         android:paddingBottom="32dp"
         android:paddingTop="32dp"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

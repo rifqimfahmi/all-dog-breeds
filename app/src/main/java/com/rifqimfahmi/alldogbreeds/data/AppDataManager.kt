@@ -1,10 +1,12 @@
 package com.rifqimfahmi.alldogbreeds.data
 
 import android.content.Context
+import com.rifqimfahmi.alldogbreeds.data.db.DbHelper
 import com.rifqimfahmi.alldogbreeds.data.network.ApiHelper
 import com.rifqimfahmi.alldogbreeds.data.network.DogApi
 import com.rifqimfahmi.alldogbreeds.data.prefs.PreferencesHelper
 import com.rifqimfahmi.alldogbreeds.di.ApplicationContext
+import io.realm.Realm
 import javax.inject.Inject
     import javax.inject.Singleton
 
@@ -15,13 +17,27 @@ import javax.inject.Inject
     @Singleton
     class AppDataManager @Inject constructor(@ApplicationContext context: Context,
                                              preferencesHelper: PreferencesHelper,
-                                             apiHelper: ApiHelper)
+                                             apiHelper: ApiHelper,
+                                             dbHelper: DbHelper)
         : DataManager {
 
         val mContext: Context = context
         val mPreferencesHelper: PreferencesHelper = preferencesHelper
         val mApiHelper: ApiHelper = apiHelper
+        val mDbHelper: DbHelper = dbHelper
 
 
         override fun getDogApi(): DogApi = mApiHelper.getDogApi()
+
+        override fun saveLovedDog(breed: String, link: String, onSuccess: Realm.Transaction.OnSuccess) {
+            mDbHelper.saveLovedDog(breed, link, onSuccess)
+        }
+
+        override fun isLoved(link: String): Boolean {
+            return mDbHelper.isLoved(link)
+        }
+
+        override fun removeLovedDog(link: String, onSuccess: Realm.Transaction.OnSuccess) {
+            mDbHelper.removeLovedDog(link, onSuccess)
+        }
     }

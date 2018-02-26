@@ -22,7 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.home.HomeActivity" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar.Transparent" />
         <activity
             android:name=".ui.breeds.BreedActivity"
             android:label="List of Dog Breeds"
@@ -31,6 +33,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.home.HomeActivity" />
         </activity>
+        <activity android:name=".ui.details_breed.DetailBreedActivity" />
     </application>
 
 </manifest>

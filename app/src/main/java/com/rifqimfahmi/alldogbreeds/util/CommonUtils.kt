@@ -14,5 +14,9 @@ class CommonUtils {
             commonDialog.show(fm, CommonLoadingDialog.TAG)
             return commonDialog
         }
+
+        fun uppercaseTheFirstLetter(string: String): String {
+            return "${string.substring(0,1).toUpperCase()}${string.substring(1)}"
+        }
     }
 }

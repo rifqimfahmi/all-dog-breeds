@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import com.rifqimfahmi.alldogbreeds.data.AppDataManager
 import com.rifqimfahmi.alldogbreeds.data.DataManager
+import com.rifqimfahmi.alldogbreeds.data.db.AppDbHelper
+import com.rifqimfahmi.alldogbreeds.data.db.DbHelper
 import com.rifqimfahmi.alldogbreeds.data.network.ApiHelper
 import com.rifqimfahmi.alldogbreeds.data.network.AppApiHelper
 import com.rifqimfahmi.alldogbreeds.data.prefs.AppPreferencesHelper
@@ -54,4 +56,9 @@ class ApplicationModule (application: Application) {
     @Provides
     @Singleton
     fun provideApiHelper(apiHelper: AppApiHelper) : ApiHelper = apiHelper
+
+
+    @Provides
+    @Singleton
+    fun provideDbHelper(dbHelper: AppDbHelper) : DbHelper = dbHelper
 }

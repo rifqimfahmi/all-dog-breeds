@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.rifqimfahmi.alldogbreeds.R
+import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListener
+import com.rifqimfahmi.alldogbreeds.util.CommonUtils
 import kotlinx.android.synthetic.main.item_dog_breed.view.*
 
 /*
@@ -15,11 +17,7 @@ import kotlinx.android.synthetic.main.item_dog_breed.view.*
 class AdapterDogBreeds(context: Context) : RecyclerView.Adapter<AdapterDogBreeds.ItemDogBreed>() {
 
     val mDogBreed: ArrayList<String> = ArrayList()
-    val mActionItemListener: ActionItemListener = context as ActionItemListener
-
-    interface ActionItemListener {
-        fun onItemClick(message: String)
-    }
+    val mActionItemListener: RecyclerViewActionListener<String> = context as RecyclerViewActionListener<String>
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ItemDogBreed {
         val view: View = LayoutInflater.from(parent?.context).inflate(R.layout.item_dog_breed, parent, false)
@@ -45,8 +43,8 @@ class AdapterDogBreeds(context: Context) : RecyclerView.Adapter<AdapterDogBreeds
     }
 
     class ItemDogBreed(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(breed: String, mActionItemListener: ActionItemListener) {
-            itemView.textview_breed.text = breed
+        fun bind(breed: String, mActionItemListener: RecyclerViewActionListener<String>) {
+            itemView.textview_breed.text = CommonUtils.uppercaseTheFirstLetter(breed)
             itemView.setOnClickListener {
                 mActionItemListener.onItemClick(breed)
             }

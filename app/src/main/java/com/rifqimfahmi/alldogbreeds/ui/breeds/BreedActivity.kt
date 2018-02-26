@@ -8,11 +8,13 @@ import android.view.MenuItem
 import android.view.View
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.ui.base.BaseActivity
+import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListener
 import com.rifqimfahmi.alldogbreeds.ui.breeds.adapter.AdapterDogBreeds
+import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedActivity
 import kotlinx.android.synthetic.main.activity_breed.*
 import javax.inject.Inject
 
-class BreedActivity : BaseActivity(), BreedMvpView, AdapterDogBreeds.ActionItemListener {
+class BreedActivity : BaseActivity(), BreedMvpView, RecyclerViewActionListener<String> {
 
     @Inject
     lateinit var mBreedPresenter: BreedMvpPresenter<BreedMvpView>
@@ -80,7 +82,8 @@ class BreedActivity : BaseActivity(), BreedMvpView, AdapterDogBreeds.ActionItemL
         swipe_dog_breed.isRefreshing = false
     }
 
-    override fun onItemClick(message: String) {
-        showMessage(message)
+    override fun onItemClick(type: String) {
+        val intent = DetailBreedActivity.getActivityIntent(this, type)
+        startActivity(intent)
     }
 }

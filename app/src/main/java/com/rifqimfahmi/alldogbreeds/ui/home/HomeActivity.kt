@@ -30,6 +30,10 @@ class HomeActivity : BaseActivity(), HomeMvpView {
         button_breeds.setOnClickListener {
             mHomePresenter.startBreedActivity(this)
         }
+
+        button_random.setOnClickListener {
+            mHomePresenter.startRandomActivity(this)
+        }
     }
 
     override fun startDesiredActivity(activityIntent: Intent) {

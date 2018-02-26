@@ -18,5 +18,13 @@ class CommonUtils {
         fun uppercaseTheFirstLetter(string: String): String {
             return "${string.substring(0,1).toUpperCase()}${string.substring(1)}"
         }
+
+        fun getBreedFromLink(link: String): String {
+            var modLink = link.substring(24)
+            var lastPathIndex = modLink.indexOf("/")
+
+            modLink = modLink.substring(0, lastPathIndex)
+            return modLink
+        }
     }
 }

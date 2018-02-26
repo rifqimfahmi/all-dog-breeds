@@ -19,6 +19,9 @@ import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpView
 import com.rifqimfahmi.alldogbreeds.ui.home.HomePresenter
+import com.rifqimfahmi.alldogbreeds.ui.random.RandomMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.random.RandomMvpView
+import com.rifqimfahmi.alldogbreeds.ui.random.RandomPresenter
 import com.rifqimfahmi.alldogbreeds.ui.splash.SplashMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.splash.SplashMvpView
 import com.rifqimfahmi.alldogbreeds.ui.splash.SplashPresenter
@@ -65,6 +68,10 @@ class ActivityModule constructor(appCompatActivity: AppCompatActivity) {
     @Provides
     @PerActivity
     fun provideDetailBreedPresenter(presenter: DetailBreedPresenter<DetailBreedMvpView>): DetailBreedMvpPresenter<DetailBreedMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideRandomPresenter(presenter: RandomPresenter<RandomMvpView>): RandomMvpPresenter<RandomMvpView> = presenter
 
     @Provides
     @PerActivity

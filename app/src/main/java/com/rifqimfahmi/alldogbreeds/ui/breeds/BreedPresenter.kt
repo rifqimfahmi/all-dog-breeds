@@ -1,6 +1,5 @@
 package com.rifqimfahmi.alldogbreeds.ui.breeds
 
-import android.util.Log
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.data.DataManager
 import com.rifqimfahmi.alldogbreeds.ui.base.BasePresenter

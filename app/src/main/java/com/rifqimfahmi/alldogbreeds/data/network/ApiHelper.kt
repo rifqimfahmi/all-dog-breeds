@@ -9,4 +9,5 @@ import rx.Observable
 
 interface ApiHelper {
     fun getDogApi(): DogApi
+    fun getGiphyApi(): GiphyApi
 }

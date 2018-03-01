@@ -19,6 +19,12 @@ import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpView
 import com.rifqimfahmi.alldogbreeds.ui.home.HomePresenter
+import com.rifqimfahmi.alldogbreeds.ui.meme.MemeMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.meme.MemeMvpView
+import com.rifqimfahmi.alldogbreeds.ui.meme.MemePresenter
+import com.rifqimfahmi.alldogbreeds.ui.quiz.QuizMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.quiz.QuizMvpView
+import com.rifqimfahmi.alldogbreeds.ui.quiz.QuizPresenter
 import com.rifqimfahmi.alldogbreeds.ui.random.RandomMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.random.RandomMvpView
 import com.rifqimfahmi.alldogbreeds.ui.random.RandomPresenter
@@ -72,6 +78,14 @@ class ActivityModule constructor(appCompatActivity: AppCompatActivity) {
     @Provides
     @PerActivity
     fun provideRandomPresenter(presenter: RandomPresenter<RandomMvpView>): RandomMvpPresenter<RandomMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideMemePresenter(presenter: MemePresenter<MemeMvpView>): MemeMvpPresenter<MemeMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideQuizPresenter(presenter: QuizPresenter<QuizMvpView>): QuizMvpPresenter<QuizMvpView> = presenter
 
     @Provides
     @PerActivity

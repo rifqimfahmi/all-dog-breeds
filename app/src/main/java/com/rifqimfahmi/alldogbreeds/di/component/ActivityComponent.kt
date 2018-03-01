@@ -7,6 +7,8 @@ import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedActivity
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetail
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImages
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeActivity
+import com.rifqimfahmi.alldogbreeds.ui.meme.MemeActivity
+import com.rifqimfahmi.alldogbreeds.ui.quiz.QuizActivity
 import com.rifqimfahmi.alldogbreeds.ui.random.RandomActivity
 import com.rifqimfahmi.alldogbreeds.ui.splash.SplashActivity
 import dagger.Component
@@ -28,6 +30,10 @@ interface ActivityComponent {
     fun inject(detailBreedActivity: DetailBreedActivity)
 
     fun inject(randomActivity: RandomActivity)
+
+    fun inject(memeActivity: MemeActivity)
+
+    fun inject(quizActivity: QuizActivity)
 
     fun inject(breedImages: BreedImages)
 

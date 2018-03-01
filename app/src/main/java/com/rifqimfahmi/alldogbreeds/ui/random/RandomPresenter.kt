@@ -5,6 +5,7 @@ import com.rifqimfahmi.alldogbreeds.ui.base.BasePresenter
 import com.rifqimfahmi.alldogbreeds.util.CommonUtils
 import com.rifqimfahmi.alldogbreeds.util.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 /*
@@ -27,6 +28,12 @@ class RandomPresenter<V: RandomMvpView> @Inject constructor(dataManager: DataMan
                             val breedType = CommonUtils.getBreedFromLink(it.message)
                             mMvpView?.loadImage(it.message)
                             mMvpView?.setBreedTittle(CommonUtils.uppercaseTheFirstLetter(breedType))
+                        }, {
+                            if (it is UnknownHostException) {
+                                mMvpView?.onError("No internet connection. Try again later!")
+                            } else {
+                                mMvpView?.onError(null)
+                            }
                         })
         )
 

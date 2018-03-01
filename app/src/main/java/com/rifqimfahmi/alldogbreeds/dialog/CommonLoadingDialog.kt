@@ -5,10 +5,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.util.Log
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import com.rifqimfahmi.alldogbreeds.R
 import kotlinx.android.synthetic.main.dialog_loading.view.*
 
@@ -52,6 +49,7 @@ class CommonLoadingDialog: DialogFragment() {
         dialog.setOnKeyListener { _: DialogInterface, keyCode: Int, keyEvent: KeyEvent ->
             onBackPressed(keyCode, keyEvent)
         }
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         return dialog
     }
 

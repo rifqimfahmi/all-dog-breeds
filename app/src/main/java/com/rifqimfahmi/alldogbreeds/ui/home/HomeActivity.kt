@@ -34,6 +34,14 @@ class HomeActivity : BaseActivity(), HomeMvpView {
         button_random.setOnClickListener {
             mHomePresenter.startRandomActivity(this)
         }
+
+        button_meme.setOnClickListener {
+            mHomePresenter.startMemeActivity(this)
+        }
+
+        button_guess.setOnClickListener {
+            mHomePresenter.startQuizActivity(this)
+        }
     }
 
     override fun startDesiredActivity(activityIntent: Intent) {

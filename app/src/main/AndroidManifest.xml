@@ -36,8 +36,24 @@
         <activity android:name=".ui.details_breed.DetailBreedActivity" />
         <activity
             android:name=".ui.random.RandomActivity"
-            android:theme="@style/AppTheme"
-            android:label="Random Dog">
+            android:label="Random Dog"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.meme.MemeActivity"
+            android:label="Dog Meme"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.quiz.QuizActivity"
+            android:label="Guess the Breed"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.home.HomeActivity" />

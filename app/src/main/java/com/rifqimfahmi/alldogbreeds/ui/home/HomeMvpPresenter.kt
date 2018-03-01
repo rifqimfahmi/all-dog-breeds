@@ -10,4 +10,6 @@ import com.rifqimfahmi.alldogbreeds.ui.base.MvpPresenter
 interface HomeMvpPresenter<V: HomeMvpView> : MvpPresenter<V> {
     fun startBreedActivity(context: Context)
     fun startRandomActivity(context: Context)
+    fun startMemeActivity(context: Context)
+    fun startQuizActivity(context: Context)
 }

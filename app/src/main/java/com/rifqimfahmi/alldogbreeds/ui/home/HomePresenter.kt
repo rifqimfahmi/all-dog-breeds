@@ -6,6 +6,8 @@ import com.rifqimfahmi.alldogbreeds.data.DataManager
 import com.rifqimfahmi.alldogbreeds.ui.base.BasePresenter
 import com.rifqimfahmi.alldogbreeds.ui.base.MvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.breeds.BreedActivity
+import com.rifqimfahmi.alldogbreeds.ui.meme.MemeActivity
+import com.rifqimfahmi.alldogbreeds.ui.quiz.QuizActivity
 import com.rifqimfahmi.alldogbreeds.ui.random.RandomActivity
 import com.rifqimfahmi.alldogbreeds.util.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
@@ -27,5 +29,13 @@ class HomePresenter<V : HomeMvpView> @Inject constructor(dataManager: DataManage
 
     override fun startRandomActivity(context: Context) {
         mMvpView?.startDesiredActivity(RandomActivity.getStartIntent(context))
+    }
+
+    override fun startMemeActivity(context: Context) {
+        mMvpView?.startDesiredActivity(MemeActivity.getStartIntent(context))
+    }
+
+    override fun startQuizActivity(context: Context) {
+        mMvpView?.startDesiredActivity(QuizActivity.getStartIntent(context))
     }
 }

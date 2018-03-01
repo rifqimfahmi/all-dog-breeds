@@ -15,8 +15,8 @@ import javax.inject.Inject
  */
 
 class AppApiHelper @Inject constructor() : ApiHelper {
-
     var mDogApi: DogApi
+    var mGiphyApi: GiphyApi
 
     // TODO : change use dagger instead
     init {
@@ -37,7 +37,12 @@ class AppApiHelper @Inject constructor() : ApiHelper {
 
         mDogApi = retrofit.baseUrl(DogApi.ENDPOINT).build()
                     .create(DogApi::class.java)
+
+        mGiphyApi = retrofit.baseUrl(GiphyApi.ENDPOINT).build()
+                .create(GiphyApi::class.java)
     }
 
     override fun getDogApi(): DogApi = mDogApi
+
+    override fun getGiphyApi(): GiphyApi = mGiphyApi
 }

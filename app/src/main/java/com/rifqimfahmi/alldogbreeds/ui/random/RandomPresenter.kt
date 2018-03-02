@@ -23,12 +23,14 @@ class RandomPresenter<V: RandomMvpView> @Inject constructor(dataManager: DataMan
                         .subscribeOn(mSchedulerProvider.io())
                         .observeOn(mSchedulerProvider.ui())
                         .doOnSubscribe { mMvpView?.showLoadingWithText("Getting Random Breed..") }
-                        .doOnTerminate { mMvpView?.hideLoading() }
+                        .doOnTerminate { mMvpView?.hideSwipe() }
                         .subscribe({
                             val breedType = CommonUtils.getBreedFromLink(it.message)
                             mMvpView?.loadImage(it.message)
                             mMvpView?.setBreedTittle(CommonUtils.uppercaseTheFirstLetter(breedType))
                         }, {
+                            mMvpView?.hideLoading()
+                            mMvpView?.showEmptyView()
                             if (it is UnknownHostException) {
                                 mMvpView?.onError("No internet connection. Try again later!")
                             } else {

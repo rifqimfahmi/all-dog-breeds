@@ -12,6 +12,7 @@ import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListener
 import com.rifqimfahmi.alldogbreeds.ui.breeds.adapter.AdapterDogBreeds
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedActivity
 import kotlinx.android.synthetic.main.activity_breed.*
+import kotlinx.android.synthetic.main.empty_dog.*
 import javax.inject.Inject
 
 class BreedActivity : BaseActivity(), BreedMvpView, RecyclerViewActionListener<String> {

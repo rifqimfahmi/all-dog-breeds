@@ -26,8 +26,7 @@ class RandomPresenter<V: RandomMvpView> @Inject constructor(dataManager: DataMan
                         .doOnTerminate { mMvpView?.hideSwipe() }
                         .subscribe({
                             val breedType = CommonUtils.getBreedFromLink(it.message)
-                            mMvpView?.loadImage(it.message)
-                            mMvpView?.setBreedTittle(CommonUtils.uppercaseTheFirstLetter(breedType))
+                            mMvpView?.loadImage(it.message, CommonUtils.uppercaseTheFirstLetter(breedType))
                         }, {
                             mMvpView?.hideLoading()
                             mMvpView?.showEmptyView()

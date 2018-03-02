@@ -7,8 +7,7 @@ import com.rifqimfahmi.alldogbreeds.ui.base.MvpView
  */
 
 interface RandomMvpView : MvpView {
-    fun loadImage(link: String)
-    fun setBreedTittle(breed: String)
+    fun loadImage(link: String, breed: String)
     fun showEmptyView()
     fun hideEmptyView()
     fun hideSwipe()

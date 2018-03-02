@@ -71,6 +71,14 @@ class HomeActivity : BaseActivity(), HomeMvpView, NavigationView.OnNavigationIte
         return true
     }
 
+    override fun onBackPressed() {
+        if (drawer_layout_home.isDrawerOpen(Gravity.START)) {
+            drawer_layout_home.closeDrawer(Gravity.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
     override fun startDesiredActivity(activityIntent: Intent) {
         startActivity(activityIntent)
     }

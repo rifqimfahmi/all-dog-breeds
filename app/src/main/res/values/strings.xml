@@ -2,4 +2,6 @@
     <string name="app_name">All Dog Breeds</string>
     <string name="dialog_loading">Loading...</string>
     <string name="dialog_loading_breed">Loading Breeds...</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>

@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:id="@+id/nv_home"
         app:headerLayout="@layout/header_activity_home"
         app:menu="@menu/activity_home"/>
 </android.support.v4.widget.DrawerLayout>

@@ -6,6 +6,7 @@ import com.rifqimfahmi.alldogbreeds.data.DataManager
 import com.rifqimfahmi.alldogbreeds.ui.base.BasePresenter
 import com.rifqimfahmi.alldogbreeds.ui.base.MvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.breeds.BreedActivity
+import com.rifqimfahmi.alldogbreeds.ui.favorite.FavoriteActivity
 import com.rifqimfahmi.alldogbreeds.ui.meme.MemeActivity
 import com.rifqimfahmi.alldogbreeds.ui.quiz.QuizActivity
 import com.rifqimfahmi.alldogbreeds.ui.random.RandomActivity
@@ -22,6 +23,9 @@ class HomePresenter<V : HomeMvpView> @Inject constructor(dataManager: DataManage
                                                          schedulerProvider: SchedulerProvider,
                                                          compositeDisposable: CompositeDisposable)
     : BasePresenter<V>(dataManager, schedulerProvider, compositeDisposable), HomeMvpPresenter<V> {
+    override fun startFavoriteActivity(context: Context) {
+        mMvpView?.startDesiredActivity(FavoriteActivity.getStartIntent(context))
+    }
 
     override fun startBreedActivity(context: Context) {
         mMvpView?.startDesiredActivity(BreedActivity.getActivityIntent(context))

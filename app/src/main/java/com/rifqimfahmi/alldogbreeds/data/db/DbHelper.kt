@@ -1,5 +1,6 @@
 package com.rifqimfahmi.alldogbreeds.data.db
 
+import com.rifqimfahmi.alldogbreeds.data.db.model.Dog
 import io.realm.Realm
 
 /*
@@ -10,4 +11,5 @@ interface DbHelper {
     fun saveLovedDog(breed: String, link: String, onSuccess: Realm.Transaction.OnSuccess)
     fun isLoved(link: String): Boolean
     fun removeLovedDog(link: String, onSuccess: Realm.Transaction.OnSuccess)
+    fun queryFavoriteDog(): ArrayList<Dog>
 }

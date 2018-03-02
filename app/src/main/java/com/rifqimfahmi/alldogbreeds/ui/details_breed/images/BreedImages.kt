@@ -12,7 +12,7 @@ import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListener
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedActivity
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.adapter.BreedImagesAdapter
 import com.rifqimfahmi.alldogbreeds.util.CommonUtils
-import kotlinx.android.synthetic.main.fragment_breed_images.*
+import kotlinx.android.synthetic.main.fragment_grid_images.*
 import javax.inject.Inject
 
 /*
@@ -26,7 +26,7 @@ class BreedImages : BaseFragment(), BreedImagesMvpView, RecyclerViewActionListen
 
     private val mImagesAdapter = BreedImagesAdapter(this)
 
-    private var mActionListener: BreedImages.ActionListener? = null
+    lateinit var mActionListener: BreedImages.ActionListener
 
     companion object {
 
@@ -52,7 +52,7 @@ class BreedImages : BaseFragment(), BreedImagesMvpView, RecyclerViewActionListen
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_breed_images, container, false)
+        val view = inflater.inflate(R.layout.fragment_grid_images, container, false)
 
         getActivityComponent().inject(this)
         mPresenter.onAttach(this)
@@ -68,13 +68,13 @@ class BreedImages : BaseFragment(), BreedImagesMvpView, RecyclerViewActionListen
     }
 
     override fun setUp(view: View) {
-        toolbar_detail_breed.title = CommonUtils.uppercaseTheFirstLetter(getBreedType())
+        toolbar_fragment_images.title = CommonUtils.uppercaseTheFirstLetter(getBreedType())
         with (mBaseActivity) {
-            setSupportActionBar(toolbar_detail_breed)
+            setSupportActionBar(toolbar_fragment_images)
             supportActionBar?.elevation = 4f
         }
 
-        with (rv_breed_images) {
+        with (rv_images_grid) {
             setHasFixedSize(true)
             layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
             adapter = mImagesAdapter

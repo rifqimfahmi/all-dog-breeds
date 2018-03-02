@@ -3,6 +3,7 @@ package com.rifqimfahmi.alldogbreeds.data.db
 import com.rifqimfahmi.alldogbreeds.data.db.model.Dog
 import io.realm.Realm
 import io.realm.RealmResults
+import io.realm.Sort
 import javax.inject.Inject
 
 /*
@@ -15,6 +16,18 @@ class AppDbHelper @Inject constructor() : DbHelper {
 
     init {
         mRealm.close()
+    }
+
+    override fun queryFavoriteDog(): ArrayList<Dog> {
+        initRealmInstance()
+
+        val dogs = mRealm. where(Dog::class.java)
+                .sort("breed", Sort.ASCENDING, "date", Sort.ASCENDING).findAll()
+        val list = mRealm.copyFromRealm(dogs)
+
+        closeRealm()
+
+        return list as ArrayList<Dog>
     }
 
     override fun saveLovedDog(breed: String, link: String, onSuccess: Realm.Transaction.OnSuccess) {

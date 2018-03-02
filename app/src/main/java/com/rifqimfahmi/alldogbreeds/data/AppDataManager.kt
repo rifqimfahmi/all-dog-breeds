@@ -2,12 +2,14 @@ package com.rifqimfahmi.alldogbreeds.data
 
 import android.content.Context
 import com.rifqimfahmi.alldogbreeds.data.db.DbHelper
+import com.rifqimfahmi.alldogbreeds.data.db.model.Dog
 import com.rifqimfahmi.alldogbreeds.data.network.ApiHelper
 import com.rifqimfahmi.alldogbreeds.data.network.DogApi
 import com.rifqimfahmi.alldogbreeds.data.network.GiphyApi
 import com.rifqimfahmi.alldogbreeds.data.prefs.PreferencesHelper
 import com.rifqimfahmi.alldogbreeds.di.ApplicationContext
 import io.realm.Realm
+import io.realm.RealmResults
 import javax.inject.Inject
     import javax.inject.Singleton
 
@@ -21,6 +23,7 @@ import javax.inject.Inject
                                              apiHelper: ApiHelper,
                                              dbHelper: DbHelper)
         : DataManager {
+
         val mContext: Context = context
         val mPreferencesHelper: PreferencesHelper = preferencesHelper
         val mApiHelper: ApiHelper = apiHelper
@@ -41,5 +44,9 @@ import javax.inject.Inject
 
         override fun removeLovedDog(link: String, onSuccess: Realm.Transaction.OnSuccess) {
             mDbHelper.removeLovedDog(link, onSuccess)
+        }
+
+        override fun queryFavoriteDog(): ArrayList<Dog> {
+            return mDbHelper.queryFavoriteDog()
         }
     }

@@ -2,7 +2,8 @@
 <com.rifqimfahmi.alldogbreeds.ui.custom.SquareImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/image_photo"
     android:scaleType="centerCrop"
+    android:foreground="@drawable/selector_foreground_images"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
 </com.rifqimfahmi.alldogbreeds.ui.custom.SquareImageView>

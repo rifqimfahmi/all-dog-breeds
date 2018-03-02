@@ -16,6 +16,12 @@ import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetailPresenter
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesMvpView
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.FavoriteMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.FavoriteMvpView
+import com.rifqimfahmi.alldogbreeds.ui.favorite.FavoritePresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteListMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteListMvpView
+import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteListPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpView
 import com.rifqimfahmi.alldogbreeds.ui.home.HomePresenter
@@ -86,6 +92,14 @@ class ActivityModule constructor(appCompatActivity: AppCompatActivity) {
     @Provides
     @PerActivity
     fun provideQuizPresenter(presenter: QuizPresenter<QuizMvpView>): QuizMvpPresenter<QuizMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideFavoritePresenter(presenter: FavoritePresenter<FavoriteMvpView>): FavoriteMvpPresenter<FavoriteMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideFavoriteListPresenter(presenter: FavoriteListPresenter<FavoriteListMvpView>): FavoriteListMvpPresenter<FavoriteListMvpView> = presenter
 
     @Provides
     @PerActivity

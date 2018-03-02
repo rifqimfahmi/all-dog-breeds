@@ -58,6 +58,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.home.HomeActivity" />
         </activity>
+        <activity android:name=".ui.favorite.FavoriteActivity"></activity>
     </application>
 
 </manifest>

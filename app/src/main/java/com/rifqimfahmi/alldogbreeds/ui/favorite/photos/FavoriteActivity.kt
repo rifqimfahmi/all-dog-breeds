@@ -1,4 +1,4 @@
-package com.rifqimfahmi.alldogbreeds.ui.favorite
+package com.rifqimfahmi.alldogbreeds.ui.favorite.photos
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.ui.base.BaseActivity
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetail
-import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteList
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images.FavoriteList
 import javax.inject.Inject
 
 class FavoriteActivity : BaseActivity(), FavoriteMvpView, FavoriteList.ActionListener {

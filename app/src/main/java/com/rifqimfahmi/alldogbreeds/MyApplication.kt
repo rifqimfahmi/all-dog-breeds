@@ -1,9 +1,11 @@
 package com.rifqimfahmi.alldogbreeds
 
 import android.app.Application
+import com.crashlytics.android.Crashlytics
 import com.rifqimfahmi.alldogbreeds.di.component.ApplicationComponent
 import com.rifqimfahmi.alldogbreeds.di.component.DaggerApplicationComponent
 import com.rifqimfahmi.alldogbreeds.di.module.ApplicationModule
+import io.fabric.sdk.android.Fabric
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
@@ -29,6 +31,8 @@ open class MyApplication : Application() {
                 .applicationModule(ApplicationModule(this))
                 .build()
 
-
+        if (!BuildConfig.DEBUG) {
+            Fabric.with(this, Crashlytics())
+        }
     }
 }

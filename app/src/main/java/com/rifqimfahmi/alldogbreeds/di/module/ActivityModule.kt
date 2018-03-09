@@ -16,12 +16,21 @@ import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetailPresenter
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesMvpView
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImagesPresenter
-import com.rifqimfahmi.alldogbreeds.ui.favorite.FavoriteMvpPresenter
-import com.rifqimfahmi.alldogbreeds.ui.favorite.FavoriteMvpView
-import com.rifqimfahmi.alldogbreeds.ui.favorite.FavoritePresenter
-import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteListMvpPresenter
-import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteListMvpView
-import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteListPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.FavoriteMemeMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.FavoriteMemeMvpView
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.FavoriteMemePresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.fragment.detail.MemeDetailMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.fragment.detail.MemeDetailMvpView
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.fragment.detail.MemeDetailPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.fragment.list.MemesFragmentPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.fragment.list.MemesListMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.fragment.list.MemesListMvpView
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.FavoriteMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.FavoriteMvpView
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.FavoritePresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images.FavoriteListMvpPresenter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images.FavoriteListMvpView
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images.FavoriteListPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpPresenter
 import com.rifqimfahmi.alldogbreeds.ui.home.HomeMvpView
 import com.rifqimfahmi.alldogbreeds.ui.home.HomePresenter
@@ -42,7 +51,6 @@ import com.rifqimfahmi.alldogbreeds.util.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
-import javax.inject.Inject
 
 /*
  * Created by Rifqi Mulya Fahmi on 13/02/18.
@@ -108,4 +116,16 @@ class ActivityModule constructor(appCompatActivity: AppCompatActivity) {
     @Provides
     @PerActivity
     fun provideImageDetailPresenter(presenter: ImageDetailPresenter<ImageDetailMvpView>):  ImageDetailMvpPresenter<ImageDetailMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideFavoriteMemePresenter(presenter: FavoriteMemePresenter<FavoriteMemeMvpView>): FavoriteMemeMvpPresenter<FavoriteMemeMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideFavoriteMemesListPresenter(presenter: MemesFragmentPresenter<MemesListMvpView>): MemesListMvpPresenter<MemesListMvpView> = presenter
+
+    @Provides
+    @PerActivity
+    fun provideMemeDetailPresenter(presenter: MemeDetailPresenter<MemeDetailMvpView>): MemeDetailMvpPresenter<MemeDetailMvpView> = presenter
 }

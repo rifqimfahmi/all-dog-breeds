@@ -1,4 +1,4 @@
-package com.rifqimfahmi.alldogbreeds.ui.favorite.images
+package com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images
 
 import android.content.Context
 import android.os.Bundle
@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.data.db.model.Dog
 import com.rifqimfahmi.alldogbreeds.ui.base.BaseFragment
-import com.rifqimfahmi.alldogbreeds.ui.favorite.images.adapter.FavoriteListAdapter
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images.adapter.FavoriteListAdapter
 import kotlinx.android.synthetic.main.fragment_grid_images.*
 import javax.inject.Inject
 
@@ -71,7 +71,7 @@ class FavoriteList : BaseFragment(), FavoriteListMvpView, FavoriteListAdapter.It
     override fun setUp(view: View) {
         setHasOptionsMenu(true)
 
-        toolbar_fragment_images.title = "Your favorite photos"
+        toolbar_fragment_images.title = "Favorite photos"
         mBaseActivity.setSupportActionBar(toolbar_fragment_images)
         mBaseActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

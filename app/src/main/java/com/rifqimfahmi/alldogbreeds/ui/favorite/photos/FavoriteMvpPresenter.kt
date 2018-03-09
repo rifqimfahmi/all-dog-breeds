@@ -1,4 +1,4 @@
-package com.rifqimfahmi.alldogbreeds.ui.favorite
+package com.rifqimfahmi.alldogbreeds.ui.favorite.photos
 
 import com.rifqimfahmi.alldogbreeds.ui.base.MvpPresenter
 

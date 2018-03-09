@@ -1,4 +1,4 @@
-package com.rifqimfahmi.alldogbreeds.ui.favorite.images.adapter
+package com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.data.db.model.Dog
-import com.rifqimfahmi.alldogbreeds.ui.favorite.images.FavoriteList
+import com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images.FavoriteList
 import kotlinx.android.synthetic.main.item_dog_images.view.*
 import kotlinx.android.synthetic.main.item_section_title.view.*
 

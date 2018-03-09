@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Favorite Photos"
-        android:id="@+id/favorite"/>
+    <group android:id="@+id/fav_menu">
+        <item
+            android:id="@+id/fav_photo"
+            android:title="Photos"
+            android:icon="@drawable/ic_favorite"/>
+        <item
+            android:id="@+id/fav_meme"
+            android:title="Memes"
+            android:icon="@drawable/ic_favorite"/>
+    </group>
+    <group android:id="@+id/gen_menu">
+        <item
+            android:id="@+id/gen_about"
+            android:icon="@drawable/ic_info"
+            android:title="About" />
+    </group>
 </menu>

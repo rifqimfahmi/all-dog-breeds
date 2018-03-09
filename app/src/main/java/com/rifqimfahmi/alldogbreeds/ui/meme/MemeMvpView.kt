@@ -8,4 +8,8 @@ import com.rifqimfahmi.alldogbreeds.ui.base.MvpView
  
 interface MemeMvpView : MvpView {
     fun loadGif(gifUrl: String?)
+    fun markLoved()
+    fun markUnloved()
+    fun onLoadMemeError()
+    fun onLoadMemeSuccess()
 }

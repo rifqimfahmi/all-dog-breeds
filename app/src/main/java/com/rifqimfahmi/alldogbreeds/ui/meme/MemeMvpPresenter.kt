@@ -9,4 +9,9 @@ import com.rifqimfahmi.alldogbreeds.ui.base.MvpPresenter
 
 interface MemeMvpPresenter<V: MemeMvpView> : MvpPresenter<V> {
     fun getMeme(context: Context)
+    fun downloadGif(activity: MemeActivity)
+    fun toggleLovedMeme()
+    fun shareCurrentGif(context: Context)
+    fun checkLovedMeme()
+    fun resetBreedResponse()
 }

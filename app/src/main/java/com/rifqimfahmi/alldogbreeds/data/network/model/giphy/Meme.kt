@@ -7,6 +7,12 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class Meme (
+        @SerializedName("slug")
+        val slug: String,
+        @SerializedName("url")
+        val giphySource: String,
+        @SerializedName("bitly_gif_url")
+        val shortLink: String,
         @SerializedName("images")
         val images: MemeImage
 )

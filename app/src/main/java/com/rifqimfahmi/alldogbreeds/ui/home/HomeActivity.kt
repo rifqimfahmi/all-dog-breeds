@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v7.app.ActionBarDrawerToggle
-import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import com.rifqimfahmi.alldogbreeds.R
@@ -62,8 +61,11 @@ class HomeActivity : BaseActivity(), HomeMvpView, NavigationView.OnNavigationIte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.favorite -> {
+            R.id.fav_photo -> {
                 mHomePresenter.startFavoriteActivity(this)
+            }
+            R.id.fav_meme -> {
+                mHomePresenter.startFavoriteMemeActivity(this)
             }
         }
 

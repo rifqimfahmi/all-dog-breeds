@@ -24,6 +24,7 @@ import com.bumptech.glide.request.target.Target
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.dialog.QuizDialog
 import com.rifqimfahmi.alldogbreeds.ui.base.BaseActivity
+import com.rifqimfahmi.alldogbreeds.util.CommonUtils
 import kotlinx.android.synthetic.main.activity_quiz.*
 import java.util.*
 import javax.inject.Inject
@@ -77,7 +78,7 @@ class QuizActivity : BaseActivity(), QuizMvpView, QuizDialog.ActionListener {
 
     override fun setupMultipleChoices(answer: String, btnPositions: ArrayList<Int>, vararg falseAnswer: String) {
         val rightBtnIndex = btnPositions[0]
-        mBtnChoices[rightBtnIndex].text = answer
+        mBtnChoices[rightBtnIndex].text = CommonUtils.uppercaseTheFirstLetter(answer)
         mBtnChoices[rightBtnIndex].setOnClickListener {
             mQuizDialog.mIsRight = true
             mQuizDialog.show(supportFragmentManager, QuizDialog.TAG)
@@ -88,7 +89,7 @@ class QuizActivity : BaseActivity(), QuizMvpView, QuizDialog.ActionListener {
 
         for (i in 1..3) {
             val wrongBtnIndex = btnPositions[i]
-            mBtnChoices[wrongBtnIndex].text = falseAnswer[i - 1]
+            mBtnChoices[wrongBtnIndex].text = CommonUtils.uppercaseTheFirstLetter(falseAnswer[i - 1])
             mBtnChoices[wrongBtnIndex].setOnClickListener {
                 mQuizDialog.mIsRight = false
                 mQuizDialog.show(supportFragmentManager, QuizDialog.TAG)

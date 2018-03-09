@@ -14,7 +14,7 @@ open class Dog : RealmObject {
     var link: String? = null
     var date: Date = Date()
 
-    constructor() {}
+    constructor()
 
     constructor(mBreed: String, mLink: String) {
         this.breed = mBreed

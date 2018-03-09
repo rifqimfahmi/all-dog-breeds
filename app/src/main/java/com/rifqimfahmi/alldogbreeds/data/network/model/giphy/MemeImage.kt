@@ -7,6 +7,10 @@ import com.google.gson.annotations.SerializedName
  */
  
 data class MemeImage (
+        @SerializedName("preview_gif")
+        val preview: MemePreview,
+        @SerializedName("downsized_medium")
+        val downsized_medium: MemeDownSizedMedium,
         @SerializedName("original")
         val original: MemeOriginal
 )

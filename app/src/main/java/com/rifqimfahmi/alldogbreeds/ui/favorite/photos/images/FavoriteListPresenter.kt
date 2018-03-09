@@ -1,4 +1,4 @@
-package com.rifqimfahmi.alldogbreeds.ui.favorite.images
+package com.rifqimfahmi.alldogbreeds.ui.favorite.photos.images
 
 import android.support.v7.widget.GridLayoutManager
 import com.rifqimfahmi.alldogbreeds.data.DataManager

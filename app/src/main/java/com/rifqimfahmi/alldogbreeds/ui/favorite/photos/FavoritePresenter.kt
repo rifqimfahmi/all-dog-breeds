@@ -1,11 +1,9 @@
-package com.rifqimfahmi.alldogbreeds.ui.favorite
+package com.rifqimfahmi.alldogbreeds.ui.favorite.photos
 
 import com.rifqimfahmi.alldogbreeds.data.DataManager
-import com.rifqimfahmi.alldogbreeds.data.db.model.Dog
 import com.rifqimfahmi.alldogbreeds.ui.base.BasePresenter
 import com.rifqimfahmi.alldogbreeds.util.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
-import io.realm.RealmResults
 import javax.inject.Inject
 
 /*
@@ -13,8 +11,8 @@ import javax.inject.Inject
  */
 
 class FavoritePresenter<V : FavoriteMvpView> @Inject constructor(dataManager: DataManager,
-                                             schedulerProvider: SchedulerProvider,
-                                             compositeDisposable: CompositeDisposable)
+                                                                                                                 schedulerProvider: SchedulerProvider,
+                                                                                                                 compositeDisposable: CompositeDisposable)
     : BasePresenter<V>(dataManager, schedulerProvider, compositeDisposable), FavoriteMvpPresenter<V> {
 
 }

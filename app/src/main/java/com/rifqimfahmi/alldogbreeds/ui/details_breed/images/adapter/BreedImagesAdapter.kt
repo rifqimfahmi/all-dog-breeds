@@ -1,5 +1,6 @@
 package com.rifqimfahmi.alldogbreeds.ui.details_breed.images.adapter
 
+import android.support.v4.view.ViewCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListener
+import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListenerWithAnimation
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImages
 import kotlinx.android.synthetic.main.item_dog_images.view.*
 
@@ -31,6 +33,8 @@ class BreedImagesAdapter(listener: BreedImages) : RecyclerView.Adapter<BreedImag
 
     override fun onBindViewHolder(holder: ItemBreedImage?, position: Int) {
         holder?.onBind(mImagesLink[position], mActionListener)
+
+        ViewCompat.setTransitionName(holder?.itemView, "${position}_dog_image")
     }
 
     fun addData(imagesLink: ArrayList<String>) {

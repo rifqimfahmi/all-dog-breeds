@@ -14,4 +14,5 @@ interface HomeMvpPresenter<V: HomeMvpView> : MvpPresenter<V> {
     fun startQuizActivity(context: Context)
     fun startFavoriteActivity(context: Context)
     fun startFavoriteMemeActivity(context: Context)
+    fun startAboutActivity(context: Context)
 }

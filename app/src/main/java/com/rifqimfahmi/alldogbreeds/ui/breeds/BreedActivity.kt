@@ -87,4 +87,9 @@ class BreedActivity : BaseActivity(), BreedMvpView, RecyclerViewActionListener<S
         val intent = DetailBreedActivity.getActivityIntent(this, type)
         startActivity(intent)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
 }

@@ -2,6 +2,7 @@ package com.rifqimfahmi.alldogbreeds.ui.home
 
 import android.content.Context
 import com.rifqimfahmi.alldogbreeds.data.DataManager
+import com.rifqimfahmi.alldogbreeds.ui.about.AboutActivity
 import com.rifqimfahmi.alldogbreeds.ui.base.BasePresenter
 import com.rifqimfahmi.alldogbreeds.ui.breeds.BreedActivity
 import com.rifqimfahmi.alldogbreeds.ui.favorite.memes.FavoriteMemeActivity
@@ -21,7 +22,6 @@ class HomePresenter<V : HomeMvpView> @Inject constructor(dataManager: DataManage
                                                          schedulerProvider: SchedulerProvider,
                                                          compositeDisposable: CompositeDisposable)
     : BasePresenter<V>(dataManager, schedulerProvider, compositeDisposable), HomeMvpPresenter<V> {
-
     override fun startFavoriteActivity(context: Context) {
         mMvpView?.startDesiredActivity(FavoriteActivity.getStartIntent(context))
     }
@@ -44,5 +44,9 @@ class HomePresenter<V : HomeMvpView> @Inject constructor(dataManager: DataManage
 
     override fun startFavoriteMemeActivity(context: Context) {
         mMvpView?.startDesiredActivity(FavoriteMemeActivity.getStartIntent(context))
+    }
+
+    override fun startAboutActivity(context: Context) {
+        mMvpView?.startDesiredActivity(AboutActivity.getStartIntent(context))
     }
 }

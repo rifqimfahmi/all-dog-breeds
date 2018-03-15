@@ -67,6 +67,9 @@ class HomeActivity : BaseActivity(), HomeMvpView, NavigationView.OnNavigationIte
             R.id.fav_meme -> {
                 mHomePresenter.startFavoriteMemeActivity(this)
             }
+            R.id.gen_about -> {
+                mHomePresenter.startAboutActivity(this)
+            }
         }
 
         drawer_layout_home.closeDrawer(Gravity.START)
@@ -83,6 +86,7 @@ class HomeActivity : BaseActivity(), HomeMvpView, NavigationView.OnNavigationIte
 
     override fun startDesiredActivity(activityIntent: Intent) {
         startActivity(activityIntent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right)
     }
 
     override fun onDestroy() {

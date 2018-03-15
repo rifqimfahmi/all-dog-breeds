@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/swipe_dog_breed"
+    android:background="@android:color/white"
     tools:context="com.rifqimfahmi.alldogbreeds.ui.breeds.BreedActivity">
 
     <android.support.constraint.ConstraintLayout

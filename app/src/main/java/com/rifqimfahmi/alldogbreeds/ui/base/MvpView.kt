@@ -1,6 +1,7 @@
 package com.rifqimfahmi.alldogbreeds.ui.base
 
 import android.support.annotation.StringRes
+import android.view.View
 
 /*
  * Created by Rifqi Mulya Fahmi on 13/02/18.

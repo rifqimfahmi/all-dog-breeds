@@ -9,9 +9,12 @@ import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import com.rifqimfahmi.alldogbreeds.MyApplication
+import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.di.component.ActivityComponent
 import com.rifqimfahmi.alldogbreeds.di.component.DaggerActivityComponent
 import com.rifqimfahmi.alldogbreeds.di.module.ActivityModule

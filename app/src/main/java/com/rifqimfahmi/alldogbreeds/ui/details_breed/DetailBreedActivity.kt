@@ -2,8 +2,12 @@ package com.rifqimfahmi.alldogbreeds.ui.details_breed
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.transition.Fade
+import android.view.View
 import com.rifqimfahmi.alldogbreeds.R
+import com.rifqimfahmi.alldogbreeds.transitions.DetailTransition
 import com.rifqimfahmi.alldogbreeds.ui.base.BaseActivity
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.detail.ImageDetail
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.BreedImages
@@ -52,6 +56,7 @@ class DetailBreedActivity : BaseActivity(), DetailBreedMvpView, BreedImages.Acti
 
     override fun openDetailFragment(link: String, links: ArrayList<String>, breedType: String) {
         val imageDetail: ImageDetail = ImageDetail.newInstance(link, links, breedType)
+
         supportFragmentManager.beginTransaction()
                 .replace(R.id.constraint_detail_breed_container, imageDetail, ImageDetail.TAG)
                 .addToBackStack(null)

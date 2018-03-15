@@ -1,14 +1,17 @@
 package com.rifqimfahmi.alldogbreeds.ui.details_breed.images
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
+import android.transition.Fade
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.rifqimfahmi.alldogbreeds.R
 import com.rifqimfahmi.alldogbreeds.ui.base.BaseFragment
 import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListener
+import com.rifqimfahmi.alldogbreeds.ui.base.helper.RecyclerViewActionListenerWithAnimation
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.DetailBreedActivity
 import com.rifqimfahmi.alldogbreeds.ui.details_breed.images.adapter.BreedImagesAdapter
 import com.rifqimfahmi.alldogbreeds.util.CommonUtils
@@ -86,8 +89,8 @@ class BreedImages : BaseFragment(), BreedImagesMvpView, RecyclerViewActionListen
     }
 
     override fun onItemClick(v: String) {
-        mActionListener?.let {
-            mActionListener!!.openDetailFragment(v, mImagesAdapter.mImagesLink, getBreedType())
+        mActionListener.let {
+            mActionListener.openDetailFragment(v, mImagesAdapter.mImagesLink, getBreedType())
         }
     }
 

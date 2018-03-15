@@ -4,4 +4,12 @@
     <string name="dialog_loading_breed">Loading Breeds...</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="about_app"><![CDATA[
+    <b>\u00A9 Rifqi Mulya Fahmi</b>. This application
+    is created to introduce you with all kind of dog breeds. There is quiz section and also an
+    entertainment like the dog meme<br><br>
+    Powered by <a href="https://github.com/ElliottLandsborough/dog-ceo-api">dog-ceo-api</a>
+    and <a href="https://giphy.com/">GIPHY</a>
+
+    ]]></string>
 </resources>

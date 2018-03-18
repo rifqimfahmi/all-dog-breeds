@@ -19,7 +19,7 @@ I didn't include the string resource file that hold my GIPHY API KEY to git in o
 ```
 ## License
 
-Apache-2.0 © [Rifqi Mulya Fahmi](https://renotekno.com/)
+Apache-2.0 © [Rifqi Mulya Fahmi](https://www.linkedin.com/in/rifqi-mulya-fahmi-66b02a10b/)
 
 ```
 Copyright 2018 Rifqi Mulya Fahmi

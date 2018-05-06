@@ -24,9 +24,9 @@ class AboutActivity : AppCompatActivity() {
         title = "About"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        var aboutString = getString(R.string.about_app)
+        val aboutString = getString(R.string.about_app)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            tv_about_content.text = Html.fromHtml(aboutString, Html.FROM_HTML_MODE_COMPACT)
+            tv_about_content.text = Html.fromHtml(aboutString, Html.FROM_HTML_MODE_COMPACT)!!
         } else {
             tv_about_content.text = Html.fromHtml(aboutString)
         }

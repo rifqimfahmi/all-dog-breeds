@@ -23,8 +23,8 @@ class FavoriteMemesAdapter(actionListener: MemeVH.ActionListener) : RecyclerView
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MemeVH {
-        val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_dog_images, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemeVH {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_dog_images, parent, false)
         return MemeVH(view)
     }
 
@@ -32,8 +32,8 @@ class FavoriteMemesAdapter(actionListener: MemeVH.ActionListener) : RecyclerView
         return mData.size
     }
 
-    override fun onBindViewHolder(holder: MemeVH?, position: Int) {
-        holder?.bind(mData[position], mData, mActionListener)
+    override fun onBindViewHolder(holder: MemeVH, position: Int) {
+        holder.bind(mData[position], mData, mActionListener)
     }
 
     class MemeVH(itemView: View?) : RecyclerView.ViewHolder(itemView) {

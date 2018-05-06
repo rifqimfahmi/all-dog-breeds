@@ -19,8 +19,8 @@ class AdapterDogBreeds(context: Context) : RecyclerView.Adapter<AdapterDogBreeds
     val mDogBreed: ArrayList<String> = ArrayList()
     val mActionItemListener: RecyclerViewActionListener<String> = context as RecyclerViewActionListener<String>
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ItemDogBreed {
-        val view: View = LayoutInflater.from(parent?.context).inflate(R.layout.item_dog_breed, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemDogBreed {
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_dog_breed, parent, false)
         return ItemDogBreed(view)
     }
 
@@ -28,8 +28,8 @@ class AdapterDogBreeds(context: Context) : RecyclerView.Adapter<AdapterDogBreeds
         return mDogBreed.size
     }
 
-    override fun onBindViewHolder(holder: ItemDogBreed?, position: Int) {
-        holder?.bind(mDogBreed[position], mActionItemListener)
+    override fun onBindViewHolder(holder: ItemDogBreed, position: Int) {
+        holder.bind(mDogBreed[position], mActionItemListener)
     }
 
     fun addData(data: List<String>) {

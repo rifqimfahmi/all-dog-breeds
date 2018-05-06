@@ -29,14 +29,14 @@ class FavoriteListAdapter (favoriteList: FavoriteList) : RecyclerView.Adapter<Re
         mFavoriteDogClickListener = favoriteList as ItemImage.ActionListener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         when (viewType) {
             VT_IMAGE -> {
-                val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_dog_images, parent, false)
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_dog_images, parent, false)
                 return ItemImage(view)
             }
             VT_TITLE -> {
-                val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_section_title, parent, false)
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_section_title, parent, false)
                 return ItemTitle(view)
             }
         }
@@ -46,8 +46,8 @@ class FavoriteListAdapter (favoriteList: FavoriteList) : RecyclerView.Adapter<Re
 
     override fun getItemCount(): Int = mDatas.size
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-        when (holder?.itemViewType) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder.itemViewType) {
             VT_IMAGE -> {
                 (holder as ItemImage).bind(mDatas[position] as Dog, mDatas, mFavoriteDogClickListener)
             }

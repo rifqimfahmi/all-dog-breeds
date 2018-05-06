@@ -105,8 +105,8 @@ class CommonUtils {
         }
 
         fun getBreedFromLink(link: String): String {
-            var modLink = link.substring(24)
-            var lastPathIndex = modLink.indexOf("/")
+            var modLink = link.substring(30)
+            val lastPathIndex = modLink.indexOf("/")
 
             modLink = modLink.substring(0, lastPathIndex)
             return modLink

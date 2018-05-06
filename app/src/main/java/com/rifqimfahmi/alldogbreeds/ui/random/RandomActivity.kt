@@ -74,6 +74,7 @@ class RandomActivity : BaseActivity(), RandomMvpView {
     }
 
     override fun showEmptyView() {
+        hideSwipe()
         if (linear_layout_empty.visibility == View.VISIBLE) return
         swipe_randon_dog.isEnabled = true
         linear_layout_empty.visibility = View.VISIBLE

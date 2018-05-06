@@ -22,8 +22,8 @@ class BreedImagesAdapter(listener: BreedImages) : RecyclerView.Adapter<BreedImag
     val mImagesLink: ArrayList<String> = ArrayList()
     val mActionListener: RecyclerViewActionListener<String> = listener
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ItemBreedImage {
-        val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_dog_images, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemBreedImage {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_dog_images, parent, false)
         return ItemBreedImage(view)
     }
 
@@ -31,10 +31,10 @@ class BreedImagesAdapter(listener: BreedImages) : RecyclerView.Adapter<BreedImag
         return mImagesLink.size
     }
 
-    override fun onBindViewHolder(holder: ItemBreedImage?, position: Int) {
+    override fun onBindViewHolder(holder: ItemBreedImage, position: Int) {
         holder?.onBind(mImagesLink[position], mActionListener)
 
-        ViewCompat.setTransitionName(holder?.itemView, "${position}_dog_image")
+        ViewCompat.setTransitionName(holder.itemView, "${position}_dog_image")
     }
 
     fun addData(imagesLink: ArrayList<String>) {

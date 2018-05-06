@@ -19,11 +19,12 @@ realm {
 }
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.rifqimfahmi.alldogbreeds"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -39,7 +40,7 @@ android {
 }
 
 ext {
-    support_library_version = "26.1.0"
+    support_library_version = "27.1.0"
     dagger_version = "2.14.1"
     retrofit_version = "2.3.0"
     logging_interceptor_version = "3.9.1"

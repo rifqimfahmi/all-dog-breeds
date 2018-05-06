@@ -89,10 +89,10 @@ class QuizDialog : DialogFragment() {
         val layoutInflater = activity?.layoutInflater
         val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(dialog.context)
         dialogBuilder.setView(layoutInflater?.inflate(R.layout.dialog_quiz, null))
-                .setPositiveButton("Continue", { dialogInterface: DialogInterface, i: Int ->
+                .setPositiveButton("Continue", { _: DialogInterface, _: Int ->
                     mActionListener.onContinueClicked()
                 })
-                .setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int ->
+                .setNegativeButton("Cancel", { _: DialogInterface, _: Int ->
 
                 })
         dialog = dialogBuilder.create()

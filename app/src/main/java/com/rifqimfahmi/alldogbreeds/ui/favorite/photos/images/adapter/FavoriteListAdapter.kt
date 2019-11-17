@@ -70,7 +70,7 @@ class FavoriteListAdapter (favoriteList: FavoriteList) : RecyclerView.Adapter<Re
         notifyDataSetChanged()
     }
 
-    class ItemImage(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class ItemImage(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         interface ActionListener {
             fun onFavoriteDogClicked(dog: Dog, breeds: ArrayList<Any>)
@@ -87,7 +87,7 @@ class FavoriteListAdapter (favoriteList: FavoriteList) : RecyclerView.Adapter<Re
         }
     }
 
-    class ItemTitle(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class ItemTitle(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(title: String) {
             itemView.tv_title.text = title
         }

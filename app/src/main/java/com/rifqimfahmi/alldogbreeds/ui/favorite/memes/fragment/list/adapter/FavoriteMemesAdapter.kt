@@ -36,7 +36,7 @@ class FavoriteMemesAdapter(actionListener: MemeVH.ActionListener) : RecyclerView
         holder.bind(mData[position], mData, mActionListener)
     }
 
-    class MemeVH(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class MemeVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         interface ActionListener {
             fun onMemeClicked(selectedMeme: DogMeme, memes: ArrayList<DogMeme>)
